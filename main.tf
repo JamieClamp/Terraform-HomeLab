@@ -1,12 +1,19 @@
 terraform {
-  required_providers {
+
+  cloud {
+    organization = "JClamp456"
+
+    workspaces {
+      name = "aws-homelab"
+    }
+  }
+
+ required_providers {
     aws = {
       source  = "hashicorp/aws"
       version = "~> 5.0"
     }
   }
-}
-
 provider "aws" {
   region     = "eu-west-1"
  }
